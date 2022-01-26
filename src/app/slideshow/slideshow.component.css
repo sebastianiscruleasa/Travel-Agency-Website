@@ -86,4 +86,11 @@
   .slideshow-description-right {
     margin-top: 3rem;
   }
+  .slideshow-description-left {
+    box-shadow: -5px -5px 12px black;
+  }
+
+  .slideshow-description-right {
+    box-shadow: 5px -5px 12px black;
+  }
 }
