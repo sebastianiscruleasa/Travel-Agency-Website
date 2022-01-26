@@ -1,0 +1,34 @@
+.footer {
+  background-color: #383838;
+}
+
+.footer img {
+  height: 3.5rem;
+  margin: 1.5rem auto;
+}
+
+.footer p,
+.footer a,
+.socket a {
+  color: white;
+  text-decoration: none;
+}
+
+.social {
+  list-style-type: none;
+  max-width: 16rem;
+}
+
+.social li {
+  margin: 0 auto;
+  font-size: 2.3rem;
+}
+
+.fab:hover {
+  color: #692592;
+}
+
+.socket {
+  background-color: #222222;
+  border-top: 0.1rem solid #692592;
+}

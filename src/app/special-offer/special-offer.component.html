@@ -1,0 +1,97 @@
+<div class="sold-out-container">
+  <h5 class="text-center" *ngIf="specialPackage?.sold == 1">SOLD OUT</h5>
+  <div
+    class="container-fluid"
+    [ngStyle]="{
+      'background-image': specialPackage
+        ? 'url(' + specialPackage?.image + ')'
+        : 'none',
+      opacity: specialPackage?.sold === 1 ? '0.3' : '1'
+    }"
+  >
+    <div class="row pb-4">
+      <div class="col-md-4 col-sm-12">
+        <div class="sale mt-2">
+          <div class="row carousel-caption">
+            <s class="h5 mx-auto">${{ specialPackage?.oldPrice }}</s>
+          </div>
+          <div class="row carousel-caption">
+            <h1 class="mx-auto">${{ specialPackage?.price }}</h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- <img
+        src="../../assets/special/combo.png"
+        alt="special offer"
+        class="d-block mb-0 mt-5 mx-auto"
+      />
+      <div class="row carousel-caption">
+        <s class="h5 mx-auto">${{ specialPackage?.oldPrice }}</s>
+      </div>
+      <div class="row carousel-caption">
+        <h1 class="mx-auto">${{ specialPackage?.price }}</h1>
+      </div> -->
+
+      <div class="col-md-4 offset-md-4 text-center">
+        <h1 class="pt-4 d-flex justify-content-center">
+          {{ specialPackage?.city }}
+        </h1>
+        <div class="offer-review pt-2">
+          <p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <span class="pl-3">2544 review</span>
+          </p>
+          <p
+            class="offer-description mb-2"
+            [innerHtml]="specialPackage?.description"
+          ></p>
+        </div>
+        <div class="offer-details">
+          <p class="mb-2">
+            <span class="px-2">
+              <i class="fa fa-user"></i> {{ specialPackage?.people }}
+            </span>
+            <span class="px-2">
+              <i class="fa fa-calendar-alt"></i> {{ specialPackage?.period }}
+            </span>
+            <span class="px-2">
+              <i class="fa fa-home"></i> {{ specialPackage?.hotel }}
+            </span>
+
+            <span class="px-1">
+              <i class="fa fa-hamburger"></i> {{ specialPackage?.food }}/day
+            </span>
+          </p>
+          <i class="fas fa-wifi px-3"></i>
+          <i class="fas fa-tv px-3"></i>
+          <i class="fas fa-cocktail px-3"></i>
+          <i class="fas fa-swimmer px-3"></i>
+          <i class="fas fa-concierge-bell px-3"></i>
+          <i class="fas fa-umbrella-beach px-3"></i>
+        </div>
+        <div class="row justify-content-center mt-5">
+          <button
+            class="book-btn"
+            (click)="openBuyNowModal()"
+            *ngIf="(!admin && isAuthenticated) || !isAuthenticated"
+            [disabled]="this.specialPackage?.sold"
+          >
+            Book Now
+          </button>
+          <button
+            class="btn btn-primary ml-3"
+            (click)="onEditPackage()"
+            *ngIf="admin && isAuthenticated"
+          >
+            Edit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

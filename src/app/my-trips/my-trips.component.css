@@ -1,0 +1,9 @@
+.col a {
+  color: #692592;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+.col a span {
+  color: #ffa85b;
+}

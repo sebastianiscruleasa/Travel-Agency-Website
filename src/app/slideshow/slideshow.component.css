@@ -1,0 +1,89 @@
+.section1,
+.section2,
+.section3 {
+  overflow: hidden;
+}
+
+.row {
+  align-items: center;
+}
+
+.slideshow-description-left {
+  position: relative;
+  padding: 1.8rem;
+  color: white;
+  background-color: #ffa85b;
+  z-index: 1000;
+  width: 100%;
+  margin-left: 3.5rem;
+}
+
+.slideshow-description-right {
+  padding: 1.8rem;
+  color: white;
+  background-color: #692592;
+  width: 100%;
+  margin-left: -3.5rem;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  width: max-content;
+}
+
+.section1 .carousel-control-next,
+.section3 .carousel-control-next {
+  right: 1.6rem;
+}
+
+.section1 .carousel-control-prev,
+.section3 .carousel-control-prev {
+  left: auto;
+  right: 4.2rem;
+}
+
+.section2 .carousel-control-prev {
+  left: 1.6rem;
+}
+
+.section2 .carousel-control-next {
+  right: auto;
+  left: 4.2rem;
+}
+
+.section1 .fa-arrow-circle-right:hover,
+.section1 .fa-arrow-circle-left:hover,
+.section3 .fa-arrow-circle-right:hover,
+.section3 .fa-arrow-circle-left:hover {
+  background-color: #692592;
+  padding: 0.3rem;
+}
+
+.section2 .fa-arrow-circle-right:hover,
+.section2 .fa-arrow-circle-left:hover {
+  background-color: #ffa85b;
+  padding: 0.3rem;
+}
+
+.fa-arrow-circle-right,
+.fa-arrow-circle-left {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.3rem;
+}
+
+@media (max-width: 575px) {
+  .slideshow-description-right h2,
+  .slideshow-description-right p {
+    margin-left: 2.5rem;
+  }
+
+  .slideshow-description-left h2,
+  .slideshow-description-left p {
+    margin-right: 2.5rem;
+  }
+
+  .slideshow-description-left,
+  .slideshow-description-right {
+    margin-top: 3rem;
+  }
+}

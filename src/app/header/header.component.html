@@ -1,0 +1,52 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+    <div class="logo">
+      <a class="navbar-brand" href="/#">
+        <img
+          src="../../assets/logo.jpg"
+          alt="logo"
+          width="50px"
+          height="50px"
+        />
+        Travel<span>Agency</span>
+      </a>
+    </div>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto align-items-end">
+        <li class="nav-item">
+          <a class="nav-link" href="/#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#top-destinations">Top Destinations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link anchor" href="#recommended">Recommended Places</a>
+        </li>
+        <li class="nav-item" *ngIf="isAuthenticated && !admin">
+          <a class="nav-link" (click)="openMyTripsModal()">My Trips</a>
+        </li>
+        <li class="nav-item" *ngIf="isAuthenticated && admin">
+          <a class="nav-link" (click)="openOrdersModal()">Orders</a>
+        </li>
+        <li class="nav-item mb-2 mb-lg-auto" *ngIf="!isAuthenticated">
+          <button class="book-btn" (click)="openLoginModal()">Login</button>
+        </li>
+        <li class="nav-item mb-2 mb-lg-auto" *ngIf="isAuthenticated">
+          <button class="book-btn" (click)="onLogout()">Log out</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="home-border mt-2 mt-md-0"></div>
+</div>

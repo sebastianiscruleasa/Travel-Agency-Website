@@ -1,0 +1,83 @@
+<div class="modal-header">
+  <div class="col text-center">
+    <a class="navbar-brand" href="/#">
+      <img src="../../assets/logo.jpg" alt="logo" width="50px" height="50px" />
+      Travel<span>Agency</span>
+    </a>
+  </div>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="loginModal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body text-center">
+  <div class="alert alert-danger" *ngIf="error">
+    <p class="mb-0">{{ error }}</p>
+  </div>
+  <div *ngIf="isLoading"><app-loading-spinner></app-loading-spinner></div>
+  <form
+    class="px-5"
+    #loginForm="ngForm"
+    (ngSubmit)="onLogin(loginForm)"
+    *ngIf="!isLoading"
+  >
+    <div class="form-group text-left">
+      <label for="email">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="johndoe@yahoo.com"
+        ngModel
+        name="email"
+        #email="ngModel"
+        required
+        email
+      />
+    </div>
+    <div
+      class="invalid-feedback d-flex justify-content-center"
+      *ngIf="!email.valid && email.touched"
+    >
+      Please enter a valid email adress!
+    </div>
+    <div class="form-group text-left pb-3">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        aria-describedby="passwordHelp"
+        placeholder="••••••"
+        name="password"
+        #password="ngModel"
+        ngModel
+        required
+        minlength="6"
+        maxlength="20"
+      />
+    </div>
+    <div
+      class="invalid-feedback d-flex justify-content-center pb-3"
+      *ngIf="!password.valid && password.touched"
+    >
+      Please enter a password!
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!loginForm.touched"
+    >
+      Login
+    </button>
+    <p class="pt-3">
+      Not a member yet?
+      <a type="button" (click)="openSignupModal()">Sign up now</a>
+    </p>
+  </form>
+</div>

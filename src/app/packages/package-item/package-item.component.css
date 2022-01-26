@@ -1,0 +1,76 @@
+.single-package-item {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  max-width: 450px;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+.single-package-item-txt {
+  padding: 0 25px;
+}
+.single-package-item img {
+  width: 100%;
+  height: 234px;
+}
+.single-package-item h3 {
+  position: relative;
+  font-size: 25px;
+  color: #565a5c;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  padding: 20px 0;
+}
+.single-package-item h3:after {
+  position: absolute;
+  content: " ";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #ebebeb;
+}
+.packages-para {
+  padding: 17px 0 0;
+}
+.packages-para.row {
+  color: #aaa;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 15px;
+}
+.col {
+  font-size: 13px !important;
+  margin-bottom: 15px;
+  color: #aaa;
+}
+.packages-review p i {
+  color: #ffdf00;
+  font-size: 16px;
+}
+.packages-review span {
+  margin-left: 20px;
+  font-size: 14px;
+  color: #aaa;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+}
+
+.single-package-item:hover {
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+.book-btn {
+  background: #692592;
+  border: 1px solid #692592;
+  width: 120px;
+  height: 40px;
+  color: #fff;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
+  transition: 0.5s ease-in-out;
+}
+.book-btn:hover {
+  color: #fff;
+  background: #ffa85b;
+  border: 1px solid #ffa85b;
+}

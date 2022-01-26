@@ -1,0 +1,335 @@
+<ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+  <span id="recommended"></span>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="pills-afirca-tab"
+      data-toggle="pill"
+      href="#pills-africa"
+      role="tab"
+      aria-controls="pills-africa"
+      aria-selected="true"
+      ><img src="../../assets/continente/africa.png" alt="Africa continent" />
+      AFRICA
+    </a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="pills-namerica-tab"
+      data-toggle="pill"
+      href="#pills-namerica"
+      role="tab"
+      aria-controls="pills-namerica"
+      aria-selected="false"
+      ><img
+        src="../../assets/continente/namerica.png"
+        alt="North America continent"
+      />NORTH AMERICA</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="pills-samerica-tab"
+      data-toggle="pill"
+      href="#pills-samerica"
+      role="tab"
+      aria-controls="pills-samerica"
+      aria-selected="false"
+      ><img
+        src="../../assets/continente/samerica.png"
+        alt="South America continent"
+      />SOUTH AMERICA</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link active"
+      id="pills-europe-tab"
+      data-toggle="pill"
+      href="#pills-europe"
+      role="tab"
+      aria-controls="pills-europe"
+      aria-selected="false"
+      ><img
+        src="../../assets/continente/europe.png"
+        alt="Europe America continent"
+      />EUROPE</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="pills-asia-tab"
+      data-toggle="pill"
+      href="#pills-asia"
+      role="tab"
+      aria-controls="pills-asia"
+      aria-selected="false"
+      ><img
+        src="../../assets/continente/asia.png"
+        alt="Asia continent"
+      />ASIA</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="pills-australia-tab"
+      data-toggle="pill"
+      href="#pills-australia"
+      role="tab"
+      aria-controls="pills-australia"
+      aria-selected="false"
+      ><img
+        src="../../assets/continente/australia.png"
+        alt="Australia continent"
+      />AUSTRALIA</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="pills-antartica-tab"
+      data-toggle="pill"
+      href="#pills-antartica"
+      role="tab"
+      aria-controls="pills-antartica"
+      aria-selected="false"
+      ><img
+        src="../../assets/continente/antartica.png"
+        alt="Antartica continent"
+      />ANTARCTICA</a
+    >
+  </li>
+</ul>
+<div class="text-center" *ngIf="isLoading">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+
+<div class="tab-content" id="pills-tabContent" *ngIf="!isLoading">
+  <div
+    class="tab-pane fade"
+    id="pills-africa"
+    role="tabpanel"
+    aria-labelledby="pills-africa-tab"
+  >
+    <div class="packages">
+      <div class="container">
+        <div class="packages-content">
+          <div class="row">
+            <ng-container *ngFor="let packageElement of packages; index as i">
+              <app-package-item
+                *ngIf="
+                  packageElement.continent == 'Africa' &&
+                  packageElement.buyerName == '' &&
+                  packageElement.buyerEmail == ''
+                "
+                [pack]="packageElement"
+                [index]="i"
+                [isAuthenticated]="isAuthenticated"
+                [admin]="admin"
+                [component]="'listPackages'"
+                class="col-lg-4 col-md-6"
+              >
+              </app-package-item>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="tab-pane fade"
+    id="pills-namerica"
+    role="tabpanel"
+    aria-labelledby="pills-namerica-tab"
+  >
+    <div class="packages">
+      <div class="container">
+        <div class="packages-content">
+          <div class="row">
+            <ng-container *ngFor="let packageElement of packages; index as i">
+              <app-package-item
+                *ngIf="
+                  packageElement.continent == 'North America' &&
+                  packageElement.buyerName == '' &&
+                  packageElement.buyerEmail == ''
+                "
+                [pack]="packageElement"
+                [index]="i"
+                [isAuthenticated]="isAuthenticated"
+                [admin]="admin"
+                [component]="'listPackages'"
+                class="col-lg-4 col-md-6"
+              >
+              </app-package-item>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="tab-pane fade"
+    id="pills-samerica"
+    role="tabpanel"
+    aria-labelledby="pills-samerica-tab"
+  >
+    <div class="packages">
+      <div class="container">
+        <div class="packages-content">
+          <div class="row">
+            <ng-container *ngFor="let packageElement of packages; index as i">
+              <app-package-item
+                *ngIf="
+                  packageElement.continent == 'South America' &&
+                  packageElement.buyerName == '' &&
+                  packageElement.buyerEmail == ''
+                "
+                [pack]="packageElement"
+                [index]="i"
+                [isAuthenticated]="isAuthenticated"
+                [admin]="admin"
+                [component]="'listPackages'"
+                class="col-lg-4 col-md-6"
+              >
+              </app-package-item>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="tab-pane fade show active"
+    id="pills-europe"
+    role="tabpanel"
+    aria-labelledby="pills-europe-tab"
+  >
+    <div class="packages">
+      <div class="container">
+        <div class="packages-content">
+          <div class="row">
+            <ng-container *ngFor="let packageElement of packages; index as i">
+              <app-package-item
+                *ngIf="
+                  packageElement.continent == 'Europe' &&
+                  packageElement.buyerName == '' &&
+                  packageElement.buyerEmail == ''
+                "
+                [pack]="packageElement"
+                [index]="i"
+                [isAuthenticated]="isAuthenticated"
+                [admin]="admin"
+                [component]="'listPackages'"
+                class="col-lg-4 col-md-6"
+              >
+              </app-package-item>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="tab-pane fade"
+    id="pills-asia"
+    role="tabpanel"
+    aria-labelledby="pills-asia-tab"
+  >
+    <div class="packages">
+      <div class="container">
+        <div class="packages-content">
+          <div class="row">
+            <ng-container *ngFor="let packageElement of packages; index as i">
+              <app-package-item
+                *ngIf="
+                  packageElement.continent == 'Asia' &&
+                  packageElement.buyerName == '' &&
+                  packageElement.buyerEmail == ''
+                "
+                [pack]="packageElement"
+                [index]="i"
+                [isAuthenticated]="isAuthenticated"
+                [admin]="admin"
+                [component]="'listPackages'"
+                class="col-lg-4 col-md-6"
+              >
+              </app-package-item>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="tab-pane fade"
+    id="pills-australia"
+    role="tabpanel"
+    aria-labelledby="pills-australia-tab"
+  >
+    <div class="packages">
+      <div class="container">
+        <div class="packages-content">
+          <div class="row">
+            <ng-container *ngFor="let packageElement of packages; index as i">
+              <app-package-item
+                *ngIf="
+                  packageElement.continent == 'Australia' &&
+                  packageElement.buyerName == '' &&
+                  packageElement.buyerEmail == ''
+                "
+                [pack]="packageElement"
+                [index]="i"
+                [isAuthenticated]="isAuthenticated"
+                [admin]="admin"
+                [component]="'listPackages'"
+                class="col-lg-4 col-md-6"
+              >
+              </app-package-item>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="tab-pane fade"
+    id="pills-antartica"
+    role="tabpanel"
+    aria-labelledby="pills-antartica-tab"
+  >
+    <div class="packages">
+      <div class="container">
+        <div class="packages-content">
+          <div class="row">
+            <ng-container *ngFor="let packageElement of packages; index as i">
+              <app-package-item
+                *ngIf="
+                  packageElement.continent == 'Antarctica' &&
+                  packageElement.buyerName == '' &&
+                  packageElement.buyerEmail == ''
+                "
+                [pack]="packageElement"
+                [index]="i"
+                [isAuthenticated]="isAuthenticated"
+                [admin]="admin"
+                [component]="'listPackages'"
+                class="col-lg-4 col-md-6"
+              >
+              </app-package-item>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row py-3 m-0" id="AddButton" *ngIf="admin && isAuthenticated">
+    <button class="book-btn m-auto" (click)="openAddPackageModal()">
+      Add Trip
+    </button>
+  </div>
+</div>

@@ -1,0 +1,166 @@
+<div class="modal-header">
+  <div class="col text-center">
+    <a class="navbar-brand" href="/#">
+      <img src="../../assets/logo.jpg" alt="logo" width="50px" height="50px" />
+      Travel<span>Agency</span>
+    </a>
+  </div>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="buynowModal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body text-left">
+  <form #paymentForm="ngForm" (ngSubmit)="onPayment(paymentForm)">
+    <div class="form-group">
+      <label for="name">
+        <h6>Card Owner</h6>
+      </label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Card Owner Name"
+        required
+        class="form-control"
+        ngModel
+        #name="ngModel"
+      />
+    </div>
+    <div
+      class="invalid-feedback d-flex justify-content-center"
+      *ngIf="!name.valid && name.touched"
+    >
+      Please enter the card owner name!
+    </div>
+    <div class="form-group">
+      <label for="cardNumber">
+        <h6>Card number</h6>
+      </label>
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control"
+          id="cardNumber"
+          placeholder="Valid card number"
+          name="cardNumber"
+          ngModel
+          minlength="16"
+          maxlength="16"
+          required
+          #cardNumber="ngModel"
+        />
+        <div class="input-group-append">
+          <span class="input-group-text text-muted">
+            <i class="fab fa-cc-visa mx-1"></i>
+            <i class="fab fa-cc-mastercard mx-1"></i>
+            <i class="fab fa-cc-amex mx-1"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-sm-10 invalid-feedback d-flex justify-content-center"
+      *ngIf="!cardNumber.valid && cardNumber.touched"
+    >
+      Please enter the card number!
+    </div>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="form-group">
+          <label for="exp-date"
+            ><span class="hidden-xs">
+              <h6>Expiration Date</h6>
+            </span></label
+          >
+          <div class="input-group">
+            <input
+              id="expDateM"
+              type="text"
+              placeholder="MM"
+              name="expDateM"
+              class="form-control"
+              minlength="2"
+              required
+              maxlength="2"
+              ngModel
+              #expDateM="ngModel"
+            />
+            <input
+              type="text"
+              id="expDateY"
+              placeholder="YY"
+              name="expDateY"
+              class="form-control"
+              required
+              minlength="2"
+              maxlength="2"
+              ngModel
+              #expDateY="ngModel"
+            />
+          </div>
+        </div>
+        <div class="row exp-messages">
+          <div class="col-sm-6">
+            <div
+              class="invalid-feedback d-flex justify-content-center m-0"
+              *ngIf="!expDateM.valid && expDateM.touched"
+            >
+              Enter the month!
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div
+              class="invalid-feedback d-flex justify-content-center m-0"
+              *ngIf="!expDateY.valid && expDateY.touched"
+            >
+              Enter the year!
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group mb-4">
+          <label
+            for="cvv"
+            data-toggle="tooltip"
+            title="Three digit CV code on the back of your card"
+          >
+            <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+          </label>
+          <input
+            id="cvv"
+            type="text"
+            placeholder="789"
+            required
+            name="cvv"
+            class="form-control"
+            minlength="3"
+            maxlength="3"
+            ngModel
+            #cvv="ngModel"
+          />
+          <div
+            class="invalid-feedback d-flex justify-content-center m-0"
+            *ngIf="!cvv.valid && cvv.touched"
+          >
+            Enter the CVV!
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button
+        type="submit"
+        class="subscribe btn btn-primary btn-block shadow-sm"
+        [disabled]="!paymentForm.valid"
+      >
+        Confirm Payment
+      </button>
+    </div>
+  </form>
+</div>

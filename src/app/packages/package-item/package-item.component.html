@@ -1,0 +1,68 @@
+<div class="single-package-item">
+  <img [src]="pack.image" alt="paris" />
+  <div class="single-package-item-txt">
+    <h3 class="d-flex">
+      {{ pack.city }}
+      <span class="ml-auto">${{ pack.price }}</span>
+    </h3>
+    <div class="packages-para">
+      <div class="row">
+        <div class="col pr-0">
+          <span> <i class="fas fa-calendar-alt"></i> {{ pack.period }} </span>
+        </div>
+        <div class="col pr-0">
+          <span> <i class="fas fa-home"></i> {{ pack.hotel }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col pr-0">
+          <span> <i class="fas fa-user"></i> {{ pack.people }} people </span>
+        </div>
+        <div class="col pr-0">
+          <span><i class="fas fa-hamburger"></i> {{ pack.food }}/day</span>
+        </div>
+      </div>
+    </div>
+    <div class="packages-review d-flex justify-content-center">
+      <p>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <span>2544 reviews</span>
+      </p>
+    </div>
+    <div
+      class="about-btn d-flex justify-content-around"
+      *ngIf="component == 'listPackages'"
+    >
+      <button
+        class="btn btn-primary col-xs-4"
+        (click)="onEditPackage()"
+        *ngIf="admin && isAuthenticated"
+      >
+        Edit
+      </button>
+      <button
+        class="book-btn col-sm-6"
+        (click)="openBuyNowModal()"
+        *ngIf="(!admin && isAuthenticated) || !isAuthenticated"
+      >
+        Book Now
+      </button>
+      <button
+        class="btn btn-danger col-xs-4"
+        (click)="openDeleteConfirmationModal()"
+        *ngIf="admin && isAuthenticated"
+      >
+        Delete
+      </button>
+    </div>
+    <div *ngIf="component == 'orders'">
+      <p>
+        <b>{{ name }}</b> bought this using <b>{{ email }}</b>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+.col a {
+  color: #692592;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+.col a span {
+  color: #ffa85b;
+}
+
+.fas {
+  color: red;
+}
+
+.btn-danger {
+  background-color: red;
+}
+
+.modal-header {
+  border-bottom: 0;
+}
+
+.modal-footer {
+  border-top: 0;
+}

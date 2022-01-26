@@ -1,0 +1,162 @@
+<div class="modal-header">
+  <div class="col text-center">
+    <a class="navbar-brand" href="/#">
+      <img src="../../assets/logo.jpg" alt="logo" width="50px" height="50px" />
+      Travel<span>Agency</span>
+    </a>
+  </div>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="editPackageModal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form
+    class="pr-3"
+    [formGroup]="packageForm"
+    (ngSubmit)="onSavePackage()"
+    *ngIf="packageForm"
+  >
+    <div class="form-group row">
+      <label for="image" class="col-sm-2 col-form-label">Image</label>
+      <input
+        type="text"
+        class="form-control col-sm-9 offset-sm-1"
+        id="image"
+        formControlName="image"
+        #image
+        required
+      />
+    </div>
+
+    <div class="row text-center ml-0 pb-2">
+      <img *ngIf="image.value" class="w-100" [src]="image.value" alt="" />
+    </div>
+
+    <div class="form-group row">
+      <label for="continent" class="col-sm-2 col-form-label">Continent</label>
+      <select
+        class="form-control col-sm-9 offset-sm-1"
+        id="continent"
+        formControlName="continent"
+      >
+        <option>Europe</option>
+        <option>North America</option>
+        <option>South America</option>
+        <option>Africa</option>
+        <option>Asia</option>
+        <option>Australia</option>
+        <option>Antarctica</option>
+      </select>
+    </div>
+
+    <div class="form-group row">
+      <label for="city" class="col-sm-2 col-form-label">City</label>
+      <input
+        type="text"
+        class="form-control col-sm-9 offset-sm-1"
+        id="city"
+        formControlName="city"
+        required
+      />
+    </div>
+    <div class="form-group row">
+      <label for="price" class="col-sm-2 col-form-label">Price</label>
+      <input
+        type="number"
+        class="form-control col-sm-2 offset-sm-1"
+        id="price"
+        formControlName="price"
+        required
+      />
+      <label for="period" class="col-sm-2 col-form-label offset-sm-1"
+        >Period</label
+      >
+      <input
+        type="string"
+        class="form-control col-sm-4"
+        id="period"
+        formControlName="period"
+        required
+      />
+    </div>
+    <div class="form-group row">
+      <label for="hotel" class="col-sm-2 col-form-label">Hotel</label>
+      <input
+        type="string"
+        class="form-control col-sm-9 offset-sm-1"
+        id="hotel"
+        formControlName="hotel"
+        required
+      />
+    </div>
+    <div class="form-group row">
+      <label for="people" class="col-sm-2 col-form-label">People</label>
+      <select
+        class="form-control col-sm-2 offset-sm-1"
+        id="people"
+        formControlName="people"
+      >
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+
+      <label for="food" class="col-sm-2 col-form-label offset-sm-1">Food</label>
+      <select class="form-control col-sm-4" id="food" formControlName="food">
+        <option>1 meal</option>
+        <option>2 meals</option>
+        <option>3 meals</option>
+      </select>
+    </div>
+    <div class="special-offer" *ngIf="isSpecialOffer">
+      <div class="form-group row d-none">
+        <label for="sold" class="col-sm-2 col-form-label">Sold</label>
+        <input
+          type="number"
+          class="form-control col-sm-2 offset-sm-1"
+          id="sold"
+          formControlName="sold"
+        />
+      </div>
+      <div class="form-group row">
+        <label for="oldPrice" class="col-sm-2 col-form-label">Old Price</label>
+        <input
+          type="number"
+          class="form-control col-sm-2 offset-sm-1"
+          id="oldPrice"
+          formControlName="oldPrice"
+          required
+        />
+      </div>
+
+      <div class="form-group row">
+        <label for="description" class="col-sm-2">Description</label>
+        <ejs-richtexteditor
+          id=""
+          cols="40"
+          rows="5"
+          formControlName="description"
+          class="col-sm-9 offset-sm-1 summernote"
+          required
+        >
+        </ejs-richtexteditor>
+      </div>
+    </div>
+    <div class="text-center">
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="!packageForm.valid"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</div>

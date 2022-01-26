@@ -1,0 +1,8 @@
+.container-fluid {
+  overflow: unset;
+  max-width: 87.5rem;
+  margin: 0 auto;
+}
+.sticky-top {
+  background: white;
+}

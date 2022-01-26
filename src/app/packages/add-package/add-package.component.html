@@ -1,0 +1,196 @@
+<div class="modal-header">
+  <div class="col text-center">
+    <a class="navbar-brand" href="/#">
+      <img src="../../assets/logo.jpg" alt="logo" width="50px" height="50px" />
+      Travel<span>Agency</span>
+    </a>
+  </div>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="addPackageModal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form class="pr-3" (ngSubmit)="onAddPackage(f)" #f="ngForm" novalidate>
+    <div class="form-group row">
+      <label for="image" class="col-sm-2 col-form-label">Image</label>
+      <input
+        type="text"
+        class="form-control col-sm-9 offset-sm-1"
+        id="image"
+        placeholder="imagePath"
+        name="image"
+        #image="ngModel"
+        ngModel
+        required
+      />
+    </div>
+    <div
+      class="
+        col-sm-9
+        offset-sm-3
+        invalid-feedback
+        d-flex
+        justify-content-center
+      "
+      *ngIf="!image.valid && image.touched"
+    >
+      Please enter an image path!
+    </div>
+    <div class="row text-center ml-0 pb-2">
+      <img *ngIf="image.value" class="w-100" [src]="image.value" alt="" />
+    </div>
+
+    <div class="form-group row">
+      <label for="continent" class="col-sm-2 col-form-label">Continent</label>
+      <select
+        class="form-control col-sm-9 offset-sm-1"
+        id="continent"
+        name="continent"
+        [ngModel]="'Europe'"
+      >
+        <option value="Europe">Europe</option>
+        <option>North America</option>
+        <option>South America</option>
+        <option>Africa</option>
+        <option>Asia</option>
+        <option>Australia</option>
+        <option>Antarctica</option>
+      </select>
+    </div>
+
+    <div class="form-group row">
+      <label for="city" class="col-sm-2 col-form-label">City</label>
+      <input
+        type="text"
+        class="form-control col-sm-9 offset-sm-1"
+        id="city"
+        placeholder="Timisoara"
+        name="city"
+        ngModel
+        required
+        #city="ngModel"
+      />
+    </div>
+    <div
+      class="
+        col-sm-9
+        offset-sm-3
+        invalid-feedback
+        d-flex
+        justify-content-center
+      "
+      *ngIf="!city.valid && city.touched"
+    >
+      Please enter a city!
+    </div>
+    <div class="form-group row">
+      <label for="price" class="col-sm-2 col-form-label">Price</label>
+      <input
+        type="number"
+        class="form-control col-sm-2 offset-sm-1"
+        id="price"
+        placeholder="999"
+        name="price"
+        ngModel
+        required
+        #price="ngModel"
+      />
+
+      <label for="period" class="col-sm-2 col-form-label offset-sm-1"
+        >Period</label
+      >
+      <input
+        type="string"
+        class="form-control col-sm-4"
+        id="period"
+        placeholder="5-10 April"
+        name="period"
+        ngModel
+        required
+        #period="ngModel"
+      />
+    </div>
+    <div class="row">
+      <div class="col-sm-4 offset-sm-2">
+        <div
+          class="invalid-feedback d-flex justify-content-center"
+          *ngIf="!price.valid && price.touched"
+        >
+          Please enter a price!
+        </div>
+      </div>
+      <div class="col-sm-4 offset-sm-2">
+        <div class="justify-content-right">
+          <div
+            class="invalid-feedback d-flex"
+            *ngIf="!period.valid && period.touched"
+          >
+            Please enter a period!
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="hotel" class="col-sm-2 col-form-label">Hotel</label>
+      <input
+        type="string"
+        class="form-control col-sm-9 offset-sm-1"
+        id="hotel"
+        placeholder="Tresoir de la Palais"
+        name="hotel"
+        ngModel
+        required
+        #hotel="ngModel"
+      />
+    </div>
+    <div
+      class="
+        col-sm-9
+        offset-sm-3
+        invalid-feedback
+        d-flex
+        justify-content-center
+      "
+      *ngIf="!hotel.valid && hotel.touched"
+    >
+      Please enter a hotel!
+    </div>
+    <div class="form-group row">
+      <label for="people" class="col-sm-2 col-form-label">People</label>
+      <select
+        class="form-control col-sm-2 offset-sm-1"
+        id="people"
+        name="people"
+        [ngModel]="'2'"
+      >
+        <option>1</option>
+        <option value="2">2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+
+      <label for="food" class="col-sm-2 col-form-label offset-sm-1">Food</label>
+      <select
+        class="form-control col-sm-4"
+        id="food"
+        name="food"
+        [ngModel]="'3 meals'"
+      >
+        <option>1 meal</option>
+        <option>2 meals</option>
+        <option value="3 meals">3 meals</option>
+      </select>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-success" [disabled]="!f.valid">
+        Add
+      </button>
+    </div>
+  </form>
+</div>
