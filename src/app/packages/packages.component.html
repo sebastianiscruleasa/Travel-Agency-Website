@@ -1,6 +1,11 @@
 <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
   <span id="recommended"></span>
-  <li class="nav-item" role="presentation">
+  <li
+    class="nav-item"
+    role="presentation"
+    [class.pillActive]="index_africa === index_max"
+    (click)="orderChange('africa')"
+  >
     <a
       class="nav-link"
       id="pills-afirca-tab"
@@ -13,7 +18,12 @@
       AFRICA
     </a>
   </li>
-  <li class="nav-item" role="presentation">
+  <li
+    class="nav-item"
+    role="presentation"
+    [class.pillActive]="index_namerica === index_max"
+    (click)="orderChange('namerica')"
+  >
     <a
       class="nav-link"
       id="pills-namerica-tab"
@@ -28,7 +38,12 @@
       />NORTH AMERICA</a
     >
   </li>
-  <li class="nav-item" role="presentation">
+  <li
+    class="nav-item"
+    role="presentation"
+    [class.pillActive]="index_samerica === index_max"
+    (click)="orderChange('samerica')"
+  >
     <a
       class="nav-link"
       id="pills-samerica-tab"
@@ -43,7 +58,12 @@
       />SOUTH AMERICA</a
     >
   </li>
-  <li class="nav-item" role="presentation">
+  <li
+    class="nav-item"
+    role="presentation"
+    [class.pillActive]="index_europa === index_max"
+    (click)="orderChange('europa')"
+  >
     <a
       class="nav-link active"
       id="pills-europe-tab"
@@ -58,7 +78,12 @@
       />EUROPE</a
     >
   </li>
-  <li class="nav-item" role="presentation">
+  <li
+    class="nav-item"
+    role="presentation"
+    [class.pillActive]="index_asia === index_max"
+    (click)="orderChange('asia')"
+  >
     <a
       class="nav-link"
       id="pills-asia-tab"
@@ -73,7 +98,12 @@
       />ASIA</a
     >
   </li>
-  <li class="nav-item" role="presentation">
+  <li
+    class="nav-item"
+    role="presentation"
+    [class.pillActive]="index_australia === index_max"
+    (click)="orderChange('australia')"
+  >
     <a
       class="nav-link"
       id="pills-australia-tab"
@@ -88,7 +118,12 @@
       />AUSTRALIA</a
     >
   </li>
-  <li class="nav-item" role="presentation">
+  <li
+    class="nav-item"
+    role="presentation"
+    [class.pillActive]="index_antartica === index_max"
+    (click)="orderChange('antartica')"
+  >
     <a
       class="nav-link"
       id="pills-antartica-tab"

@@ -55,3 +55,15 @@ ul span {
   background: #ffa85b;
   border: 1px solid #ffa85b;
 }
+
+@media (max-width: 639px) {
+  .pillActive {
+    order: 1;
+  }
+}
+
+@media (max-width: 1119px) and (min-width: 960px) {
+  .pillActive {
+    order: 1;
+  }
+}
